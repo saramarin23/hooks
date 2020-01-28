@@ -10,6 +10,8 @@ import {
 
 import styles from "./style";
 
+import Icon from "@material-ui/core/Icon";
+
 export default () => {
   const [searchText, setSearchText] = useState("");
   const classes = styles();
@@ -34,7 +36,8 @@ export default () => {
             <Typography className={classes.title}>Bienvenido!</Typography>
           </Grid>
           <Grid>
-            <label>Icono</label>
+            <label>{/* <TheatersIcon /> */}</label>
+            <Icon className={classes.movieIcon}>theatersicon</Icon>
           </Grid>
         </Grid>
         <TextField
