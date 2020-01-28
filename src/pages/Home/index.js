@@ -8,8 +8,11 @@ import {
   Button
 } from "@material-ui/core";
 
+import styles from "./style";
+
 export default () => {
   const [searchText, setSearchText] = useState("");
+  const classes = styles();
 
   const handleSearchTextChange = event => {
     setSearchText(event.target.value);
@@ -24,11 +27,11 @@ export default () => {
   };
 
   return (
-    <Container>
-      <Card>
-        <Grid container>
+    <Container className={classes.container}>
+      <Card className={classes.cardContainer}>
+        <Grid container className={classes.titleGridContainer}>
           <Grid>
-            <Typography>Bienvenido!</Typography>
+            <Typography className={classes.title}>Bienvenido!</Typography>
           </Grid>
           <Grid>
             <label>Icono</label>
@@ -38,14 +41,16 @@ export default () => {
           value={searchText}
           placeholder="Buscar..."
           onChange={handleSearchTextChange}
+          className={classes.textFieldContainer}
         />
-        <Grid>
+        <Grid className={classes.buttonsContainer}>
           <Button variant="contained" onClick={handleResetText}>
             Reset
           </Button>
           <Button
             variant="contained"
             color="primary"
+            className={classes.searchButton}
             onClick={handleSearchText}
           >
             Search
